@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  fweb:
+    build: ../pweb-f
+    ports:
+      - 3000:3000
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:3000
+    depends_on:
+      - fweb
