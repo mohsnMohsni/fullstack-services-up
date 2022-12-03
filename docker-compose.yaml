@@ -1,10 +1,25 @@
-version: '3'
+version: '3.8'
 
 services:
+  postgresdb:
+    extends:
+      file: ../pweb-b/docker-compose.yaml
+      service: postgresdb
+
+  bweb:
+    extends:
+      file: ../pweb-b/docker-compose.yaml
+      service: backend
+    depends_on:
+      - postgresdb
+
   fweb:
-    build: ../pweb-f
-    ports:
-      - 127.0.0.1:3000:3000
+    extends:
+      file: ../pweb-f/docker-compose.yaml
+      service: frontend
+    depends_on:
+      - bweb
+
   nginx:
     build: ./nginx
     ports:
