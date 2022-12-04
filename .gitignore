@@ -7,3 +7,4 @@
 .env.production
 .env.frontend
 .env.backend
+.env.database
