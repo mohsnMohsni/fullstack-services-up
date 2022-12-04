@@ -23,6 +23,7 @@ services:
       - postgresdb
       - redis
     links:
+      - redis
       - postgresdb
 
   fweb:
