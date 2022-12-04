@@ -5,3 +5,5 @@ git pull origin main;
 sudo docker-compose up --build -d;
 
 docker image rm -f $(docker images -q --filter "dangling=true");
+
+docker container prune -f
