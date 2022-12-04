@@ -6,12 +6,18 @@ services:
       file: ../pweb-b/docker-compose.yaml
       service: postgresdb
 
+  redis:
+    extends:
+      file: ../pweb-b/docker-compose.yaml
+      service: redis
+
   bweb:
     extends:
       file: ../pweb-b/docker-compose.yaml
       service: backend
     depends_on:
       - postgresdb
+      - redis
     links:
       - postgresdb
 
