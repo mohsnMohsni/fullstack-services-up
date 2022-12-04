@@ -6,6 +6,7 @@
 - Django
 - Next JS
 - Nginx
+- Redis
 
 ### Getting start
 
