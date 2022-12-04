@@ -5,6 +5,8 @@ services:
     extends:
       file: ../pweb-b/docker-compose.yaml
       service: postgresdb
+    .env_file:
+      - ./envs/.env.backend
 
   redis:
     extends:
