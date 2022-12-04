@@ -1,3 +1,9 @@
-# editors
+# editor
 .vscode/
 .idea/
+
+# env
+.env.development
+.env.production
+.env.frontend
+.env.backend
