@@ -41,8 +41,8 @@ services:
     ports:
       - "4443:443/tcp"
       - "4443:443/udp"
-    volumes:
-      - "/opt/ocserv:/etc/ocserv"
+    # volumes:
+    #   - "/opt/ocserv:/etc/ocserv"
     environment:
       - VPN_DOMAIN=vpn.easypi.pro
       - VPN_NETWORK=10.20.30.0
