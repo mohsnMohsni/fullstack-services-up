@@ -43,4 +43,3 @@ services:
       - "/var/www/ocserv/:/var/www/ocserv/"
     depends_on:
       - fweb
-      - ocserv
