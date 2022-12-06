@@ -43,12 +43,3 @@ services:
       - "/var/www/ocserv/:/var/www/ocserv/"
     depends_on:
       - fweb
-
-  zabbix:
-    build: ./zabbix
-    env_file:
-      - ./envs/.env.zabbix
-    environment:
-      - DB_SERVER_HOST=postgresdb
-    depends_on:
-      - nginx
