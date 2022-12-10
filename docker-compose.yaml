@@ -5,8 +5,6 @@ services:
     extends:
       file: ../pweb-b/docker-compose.yaml
       service: postgresdb
-    environment:
-      POSTGRES_PASSWORD:${POSTGRES_PASSWORD}
 
   redis:
     extends:
@@ -23,13 +21,6 @@ services:
     links:
       - redis
       - postgresdb
-    environment:
-      DJANGO_ENV:${DJANGO_ENV}
-      SECRET_KEY:${SECRET_KEY}
-      POSTGRES_NAME:${POSTGRES_NAME}
-      POSTGRES_USER:${POSTGRES_USER}
-      POSTGRES_PASSWORD:${POSTGRES_PASSWORD}
-      KAVENEGAR_API:${KAVENEGAR_API}
 
   fweb:
     extends:
@@ -37,9 +28,6 @@ services:
       service: frontend
     depends_on:
       - bweb
-    environment:
-      - NEXT_PUBLIC_API_URL:${NEXT_PUBLIC_API_URL}
-
 
   nginx:
     build: ./nginx
