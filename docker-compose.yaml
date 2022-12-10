@@ -5,8 +5,6 @@ services:
     extends:
       file: ../pweb-b/docker-compose.yaml
       service: postgresdb
-    env_file:
-      - ./envs/.env.database
 
   redis:
     extends:
@@ -17,8 +15,6 @@ services:
     extends:
       file: ../pweb-b/docker-compose.yaml
       service: backend
-    env_file:
-      - ./envs/.env.backend
     depends_on:
       - postgresdb
       - redis
@@ -30,8 +26,6 @@ services:
     extends:
       file: ../pweb-f/docker-compose.yaml
       service: frontend
-    env_file:
-      - ./envs/.env.frontend
     depends_on:
       - bweb
 
